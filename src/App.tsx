@@ -10,6 +10,7 @@ function App() {
   return (
     <Grid container spacing={5}>
       <Grid xs={6} md={4} lg={3}>
+        Prueba
         <Indicator title="Precipitacion" subtitle="Probabilidad" value={0.13} />
       </Grid>
       <Grid xs={6} md={4} lg={3}>
