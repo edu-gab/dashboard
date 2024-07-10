@@ -5,6 +5,7 @@ import Indicator from './components/Indicator'
 import Summary from './components/Summary'
 import BasicTable from './components/BasicTable'
 import WeatherChart from './components/WeatherChart'
+import ControlPanel from './components/ControlPanel'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,9 @@ function App() {
       </Grid>
       <Grid xs={6} md={4} lg={12}>
         <BasicTable></BasicTable>
+      </Grid>
+      <Grid xs={12} lg={2}>
+        <ControlPanel />
       </Grid>
       <Grid xs={12} lg={10}>
         <WeatherChart></WeatherChart>
