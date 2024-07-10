@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 export default function ControlPanel(){
-    let [selected, setSelected] = useState(-1)
+    let [, setSelected] = useState<string>("-1");
 
     const descriptionRef = useRef<HTMLDivElement>(null);
 
@@ -18,14 +18,15 @@ export default function ControlPanel(){
         {"name":"Nubosidad", "description":"Grado de cobertura del cielo por nubes, afectando la visibilidad y la cantidad de luz solar recibida."}
     ]
 
-    let options = items.map((item, key) => <MenuItem key={key} value={key}>{item["name"]}</MenuItem> )
+    let options = items.map((item, key) => <MenuItem key={key} value={key.toString()}>{item["name"]}</MenuItem> )
 
     const handleChange = (event: SelectChangeEvent) => {
-        let idx = parseInt(event.target.value)
+        let idx = event.target.value;
         setSelected(idx);
 
         if(descriptionRef.current !== null){
-            descriptionRef.current.innerHTML = (idx >= 0) ? items[idx]["description"] : ""
+            const index = parseInt(idx);
+            descriptionRef.current.innerHTML = (index >= 0) ? items[index]["description"] : "";
         }
     }
 
@@ -58,12 +59,6 @@ export default function ControlPanel(){
                     </Select>
                 </FormControl>
             </Box>
-
-            {/*<Typography mt={2} component="p" color="text.secondary">
-                {
-                    (selected >= 0)?items[selected]["description"]:""
-                }
-            </Typography>*/}
 
             <Typography ref={descriptionRef} mt={2} component="p" color="text.secondary" />
         </Paper>
