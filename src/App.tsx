@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Grid from '@mui/material/Unstable_Grid2'
 import './App.css'
 import Indicator from './components/Indicator'
@@ -8,8 +7,6 @@ import WeatherChart from './components/WeatherChart'
 import ControlPanel from './components/ControlPanel'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <Grid container spacing={5}>
       <Grid xs={6} md={4} lg={3}>
