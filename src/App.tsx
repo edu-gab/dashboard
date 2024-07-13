@@ -64,7 +64,6 @@ function App() {
   return (
     <>
       <Grid container spacing={5}>
-        <p>Eduardo </p>
         <Grid xs={6} lg={4}>
           {indicators[0]}
         </Grid>
