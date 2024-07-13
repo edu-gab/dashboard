@@ -9,7 +9,7 @@ function App() {
   useEffect( ()=>{ 
     (async ()=>{
       let savedTextXML = localStorage.getItem("openWeatherMap");
-      let expiringTime = localStorage.getItem("expirintTime");
+      let expiringTime = localStorage.getItem("expiringTime");
 
       let nowTime = new Date().getTime();
 
