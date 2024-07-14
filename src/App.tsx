@@ -79,7 +79,7 @@ function App() {
           <BasicTable />
         </Grid>
         <Grid item xs={20} style={{justifyContent: 'center'}}>
-          <h2>Grafica de Temperatura</h2>
+          <h2>Grafica de Clima</h2>
           <TemperatureChart />
         </Grid>
       </Grid>
