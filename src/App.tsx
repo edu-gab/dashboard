@@ -4,11 +4,8 @@ import Indicator from './components/Indicator';
 import Grid from '@mui/material/Grid';
 import BasicTable from './components/BasicTable';
 import TemperatureChart from './components/TemperatureChart'; 
-import ControlPanel from './components/ControlPanel';
 
 function App() {
-  const [city, setCity] = useState('Guayaquil')
-  const [weatherData, sertWeatherData] = useState(null);
   const [indicators, setIndicators] = useState([]);
 
   useEffect(() => {
