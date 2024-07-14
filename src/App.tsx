@@ -4,8 +4,11 @@ import Indicator from './components/Indicator';
 import Grid from '@mui/material/Grid';
 import BasicTable from './components/BasicTable';
 import TemperatureChart from './components/TemperatureChart'; 
+import ControlPanel from './components/ControlPanel';
 
 function App() {
+  const [city, setCity] = useState('Guayaquil')
+  const [weatherData, sertWeatherData] = useState(null);
   const [indicators, setIndicators] = useState([]);
 
   useEffect(() => {
@@ -69,7 +72,10 @@ function App() {
     <>
       <h1>Dashboard de Clima</h1>
       <h2>Clima Actual</h2>
+     
       <Grid container spacing={5}>
+        <Grid item xs={12}>
+        </Grid>
         {indicators}
         <Grid item xs={12}>
           <h2>Pronóstico de los siguientes días</h2>
