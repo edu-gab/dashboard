@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Indicator from './components/Indicator';
 import Grid from '@mui/material/Unstable_Grid2';
+import BasicTable from './components/BasicTable';
 
 function App() {
   const [indicators, setIndicators] = useState([]);
@@ -45,10 +46,10 @@ function App() {
 
       dataToIndicators.push(["Velocidad del Viento", speedValue += "m/s"]);
 
-      let humdity = xml.getElementsByTagName("humidity")[0];
-      let humidtyValue = humdity.getAttribute("value");
+      let humidity = xml.getElementsByTagName("humidity")[0];
+      let humidityValue = humidity.getAttribute("value");
 
-      dataToIndicators.push(["Humedad", humidtyValue += "%"]);
+      dataToIndicators.push(["Humedad", humidityValue += "%"]);
       
 
       let indicatorsElements = Array.from(dataToIndicators).map(
@@ -63,18 +64,24 @@ function App() {
 
   return (
     <>
+      <h1>Dashboard de Clima</h1>
+      <h2>Clima Actual</h2>
       <Grid container spacing={5}>
-        <Grid xs={6} lg={4}>
+        <Grid xs={6} lg={3}>
           {indicators[0]}
         </Grid>
-        <Grid xs={6} lg={4}>
+        <Grid xs={6} lg={3}>
           {indicators[1]}
         </Grid>
-        <Grid xs={6} lg={4}>
+        <Grid xs={6} lg={3}>
           {indicators[2]}
         </Grid>
-        <Grid xs={6} lg={4}>
+        <Grid xs={6} lg={3}>
           {indicators[3]}
+        </Grid>
+        <Grid xs={12}>
+          <h2>Pronostico de los siguientes dias</h2>
+          <BasicTable />
         </Grid>
       </Grid>
     </>
