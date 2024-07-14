@@ -55,7 +55,7 @@ export default function WeatherChart() {
     const chartData = weatherData.map((item) => [item.date, item[dataType]]);
 
     return (
-        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', backgroundColor: '#d4eaf7'}}>
             <FormControl fullWidth variant="outlined" sx={{ mb: 2 }}>
                 <InputLabel id="data-type-label">Tipo de Datos</InputLabel>
                 <Select

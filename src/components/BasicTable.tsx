@@ -51,9 +51,9 @@ export default function BasicTable() {
   }, []);
 
   return (
-    <div style={{ maxHeight: 400, overflow: 'auto' }}>
+    <div style={{ maxHeight: 400, overflow: 'auto' }} >
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650, backgroundColor: '#d4eaf7' }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Fecha</TableCell>
